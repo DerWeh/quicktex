@@ -1,3 +1,13 @@
+All credits go to brennier. I just adjust what feel's wrong to me.
+
+Changes:
+------
+
+* expansion of templates doesn't pollute the search history
+  - after every search the history is currently cleared as I couldn't figure out how to use `:keeppatterns`
+  - if you try to jump to a non existing mark the history is still polluted
+* break the undo sequenze for expansions this allows e.g. mappings like `inoremap <C-B> <C-o>u<SPACE>` to undo the expansion and insert a space instead. In math mode this might prove anoying when you have a lot of expansions.
+
 ## QuickTex is a template expander for quickly writing LaTeX
 
 Before anything else, here's a real-time demonstration of what QuickTex can do:
