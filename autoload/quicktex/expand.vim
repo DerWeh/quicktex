@@ -28,7 +28,7 @@ function! quicktex#expand#ExpandWord(ft) abort
     " Create a string of backspaces to delete the last word, and also create a
     " string for jumping back to the identifier "<+++>" if it exists.
     let l:delword  = repeat("\<BS>", strlen(l:word))
-    let l:jumpBack = stridx(l:result,'<+++>')+1 ? "\<ESC>?<+++>\<CR>\"_cf>" : ''
+    let l:jumpBack = stridx(l:result,'<+++>')+1 ? "\<ESC>?<+++>\<CR>:call histdel(\"search\", -1)\<CR>\"_cf>" : ''
 
     " Delete the original word, replace it with the result of the dictionary,
     " and jump back if needed.

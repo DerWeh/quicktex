@@ -29,7 +29,7 @@ endif
 " Math Mode Keywords {{{
 
 let g:quicktex_math = {
-    \' ' : "\<ESC>/<+.*+>\<CR>\"_c/+>/e\<CR>",
+    \' ' : "\<ESC>/<+.*+>\<CR>:call histdel(\"search\", -1)\<CR>\"_d/+>/e\<CR>:call histdel(\"search\", -1)\<CR>i",
 \'Section: Lowercase Greek Letters' : 'COMMENT',
     \'alpha'   : '\alpha ',
     \'ga'      : '\alpha ',
@@ -231,19 +231,19 @@ let g:quicktex_math = {
 
 " LaTeX Mode Keywords {{{
 
+" FIXME: better define function with try except?
 let g:quicktex_tex = {
-    \' ' : "\<ESC>/<+.*+>\<CR>\"_c/+>/e\<CR>",
+    \' ' : "\<ESC>/<+.*+>\<CR>:call histdel(\"search\", -1)\<CR>\"_d/+>/e\<CR>:call histdel(\"search\", -1)\<CR>i",
     \'m' : '\( <+++> \) <++>',
 \'Section: Environments' : 'COMMENT',
     \'env' : "\<ESC>Bvedi\\begin{\<ESC>pa}\<CR><+++>\<CR>\\end{\<ESC>pa}",
-    \'exe' : "\\begin{exercise}{<+++>}\<CR><++>\<CR>\\end{exercise}",
+    \'exe' : "\\begin{exercise}{<+++>}\<cr><++>\<CR>\\end{exercise}",
     \'prf' : "\\begin{proof}\<CR><+++>\<CR>\\end{proof}",
     \'thm' : "\\begin{theorem}\<CR><+++>\<CR>\\end{theorem}",
     \'lst' : "\\begin{enumerate}[a)]\<CR>\\item <+++>\<CR>\\end{enumerate}",
     \'eq'  : "\\begin{displaymath}\<CR><+++>\<CR>\\end{displaymath}",
     \'eqn' : "\\begin{equation}\\label{<+++>}\<CR><++>\<CR>\\end{equation}",
     \
-\'Section: Other Commands' : 'COMMENT',
     \'itm'  : '\item ',
     \'sect' : "\\section*{<+++>}\<CR><++>",
     \'para' : '(<+++>) <++>',
