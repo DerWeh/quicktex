@@ -101,3 +101,4 @@ Todo:
 * [ ] make math mode more flexible to be expandable to other environments (maybe even insets like code of another language)
 * [ ] Write better and more consistent default dictionaries
 * [ ] Offer in Vim help and maybe a cheat-sheet to find available abbreviations.
+* [ ] Allow local files to include expansions for your custom commmands.
