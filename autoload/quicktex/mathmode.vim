@@ -8,15 +8,15 @@ let s:endMathModes = ['\\)', '\\]', '\\end{equation', '\\end{displaymath',
             \'\\end{multline', '\\end{gather', '\\end{align', ]
 
 " Detects to see if the user is inside math delimiters or not
-function! quicktex#mathmode#InMathMode()
+function! quicktex#mathmode#InMathMode() abort
     " Find the line number and column number for the last math delimiters
-    let [lnum1, col1] = searchpos(join(s:begMathModes,'\|'), 'nbW')
-    let [lnum2, col2] = searchpos(join(s:endMathModes,'\|'), 'nbW')
+    let [l:lnum1, l:col1] = searchpos(join(s:begMathModes,'\|'), 'nbW')
+    let [l:lnum2, l:col2] = searchpos(join(s:endMathModes,'\|'), 'nbW')
 
     " See if the last math mode ending delimiter occurred after the last math
     " mode beginning delimiter. If not, then you're in math mode. This works
     " because you can't have math mode delimiters inside math mode delimiters.
-    if (lnum1 > lnum2) || (lnum1 == lnum2 && col1 > col2)
+    if (l:lnum1 > l:lnum2) || (l:lnum1 == l:lnum2 && l:col1 > l:col2)
         return 1
     endif
 
@@ -51,20 +51,20 @@ function! quicktex#mathmode#InMathMode()
     " 'gdefault' option (inverting the effect of the 'g' flag in the
     " substitution command) to ensure that we count the number of dollar and
     " double dollar signs correctly.
-    let curs         = getcurpos()
-    let gflag        = &gdefault ? '' : 'g'
-    let numofdollars = strpart(execute('0,.-s/\\\@<!\$.\?//ne'.gflag), 1)
-    call setpos('.', curs)
+    let l:curs         = getcurpos()
+    let l:gflag        = &gdefault ? '' : 'g'
+    let l:numofdollars = strpart(execute('0,.-s/\\\@<!\$.\?//ne'.l:gflag), 1)
+    call setpos('.', l:curs)
 
     " Count the number of $ and $$ signs on the current line by getting the
     " line up to the cursor position, substituting a space for every `\$`,
     " splitting at every $ and $$ sign, and then counting the number of splits
     " there are. We add all of this to the number of dollars we found in the
     " previous lines.
-    let line = substitute(strpart(getline('.'), 0, col('.')-1), '\\\$', ' ', 'g')
-    let numofdollars += len(split(line, '\$.', 1))-1
+    let l:line = substitute(strpart(getline('.'), 0, col('.')-1), '\\\$', ' ', 'g')
+    let l:numofdollars += len(split(l:line, '\$.', 1))-1
 
     " If the total number of $'s and $$'s is odd, then we must be in some
     " version of math mode. Otherwise, we're not in math mode.
-    return (numofdollars % 2)
+    return (l:numofdollars % 2)
 endfunction
