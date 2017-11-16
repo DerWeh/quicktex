@@ -32,5 +32,5 @@ function! quicktex#expand#ExpandWord(ft) abort
 
     " Delete the original word, replace it with the result of the dictionary,
     " and jump back if needed.
-    return l:delword.l:result.l:jumpBack
+    return "\<C-g>u".l:delword.l:result.l:jumpBack
 endfunction
