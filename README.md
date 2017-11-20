@@ -1,4 +1,4 @@
-All credits go to brennier. I just adjust what feels wrong to me.
+All credits go to Brenner. I just adjust what feels wrong to me.
 
 Changes:
 ------
@@ -12,6 +12,10 @@ Changes:
     Break the undo sequence for expansions. 
     This allows e.g. mappings like `inoremap <C-B> <C-o>u<SPACE>` to undo the expansion and insert a space instead. 
     In math mode this might prove anoying when you have a lot of expansions.
+
+* **better default dictionaries** (to my mind)
+
+    Consitent Greek letters (in the same fashion as [Vimtex](https://github.com/lervag/vimtex))
 
 ## QuickTex is a template expander for quickly writing LaTeX
 
@@ -100,5 +104,6 @@ Todo:
 
 * [ ] make math mode more flexible to be expandable to other environments (maybe even insets like code of another language)
 * [ ] Write better and more consistent default dictionaries
+  * [X] Redo Greek letters
 * [ ] Offer in Vim help and maybe a cheat-sheet to find available abbreviations.
-* [ ] Allow local files to include expansions for your custom commmands.
+* [ ] Allow local files to include expansions for your custom commands.
