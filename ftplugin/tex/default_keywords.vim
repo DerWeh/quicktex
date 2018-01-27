@@ -239,6 +239,7 @@ let g:quicktex_math = {
     \'sthree' : "\<BS>_3 ",
     \'sfour'  : "\<BS>_4 ",
     \'text'   : '\text{<+++>} <++>',
+    \'prime'  : "\<SPACE>\<LEFT>\<C-o>ciw^{\\prime} ",
     \
 \'Section: Fancy Variables' : 'COMMENT',
     \'fA' : '\mathcal{A} ',
@@ -297,7 +298,7 @@ let g:quicktex_math = {
 
 let g:quicktex_tex = {
     \' ' : "\<ESC>:call search('<+.*+>')\<CR>\"_ca<",
-    \'m' : '\( <+++> \) <++>',
+    \'m' : '\(<+++>\) <++>',
 \'Section: Environments' : 'COMMENT',
     \'env' : "\<ESC>Bvedi\\begin{\<ESC>pa}\<CR><+++>\<CR>\\end{\<ESC>pa}",
     \'exe' : "\\begin{exercise}{<+++>}\<CR><++>\<CR>\\end{exercise}",
