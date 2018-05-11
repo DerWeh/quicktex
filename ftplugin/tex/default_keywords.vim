@@ -257,7 +257,7 @@ let g:quicktex_math = {
 \'Section: Encapsulating keywords' : 'COMMENT',
     \'hat'  : "\<ESC>Bi\\hat{\<ESC>Els} ",
     \'bar'  : "\<ESC>Bi\\overline{\<ESC>Els} ",
-    \'tild'  : "\<ESC>Bi\\tild{\<ESC>Els} ",
+    \'tilde'  : "\<ESC>Bi\\tilde{\<ESC>Els} ",
     \'vec'  : "\<ESC>Bi\\vec{\<ESC>Els} ",
     \'star'  : "\<BS>^* ",
     \
