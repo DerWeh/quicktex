@@ -177,8 +177,6 @@ let g:quicktex_math = {
     \'iff'     : '\iff ',
     \
 \'Section: Relations' : 'COMMENT',
-    \'lt'      : '< ',
-    \'gt'      : '> ',
     \'leq'     : '\leq ',
     \'geq'     : '\geq ',
     \'eq'      : '= ',
